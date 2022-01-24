@@ -1,9 +1,9 @@
 // import mongoose
 const mongoose = require('mongoose')
-const db_name = project_DB
+const db_name = "product_DB"
 // connect to db
 mongoose.connect(`mongodb://localhost/${db_name}`, {
-    useNewUrlParse: true,
+    useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log(`Established a connection to the database ${db_name}`))
     .catch(err => console.log({
