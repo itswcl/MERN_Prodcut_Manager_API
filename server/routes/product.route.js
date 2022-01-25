@@ -7,4 +7,6 @@ module.exports = function(app) {
     app.get("/api/products/:id", ProductController.findOne)
     app.post("/api/products/new", ProductController.createOne)
 
+    app.put("/api/products/update", ProductController.update)
+    app.delete("/api/products/:id", ProductController.delete)
 }

@@ -31,5 +31,22 @@ module.exports = {
         Product.findById(req.params.id)
             .then(product => res.json({product: product, message: "success"}))
             .catch(err => res.json({message: "failed", error: err}))
+    },
+
+
+    // ---------------- Update One ----------------
+    update: (req, res) => {
+        Product.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators:true})
+            .then(product => res.json({product: product}))
+            .catch(err => res.json({message: "failed", error: err}))
+    },
+
+
+    // ---------------- DELETE One ----------------
+    delete: (req, res) => {
+        Product.findByIdAndDelete(req.params.id)
+            .then(product => res.json({deleteProduct: product}))
+            .catch(err => res.json({message: "failed", error: err}))
     }
+
 }
